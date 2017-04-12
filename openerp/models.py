@@ -923,7 +923,14 @@ class BaseModel(object):
                                 current[i] = ','.join(xml_ids)
                             else:
                                 # append the other lines at the end
-                                lines += lines2[1:]
+                                # lines += lines2[1:]
+                                # AEA: Workaround to have all values in all columns for Excel filtering
+                                for l in lines2[1:]:
+                                    new_cur = list(current)
+                                    for j, val in enumerate(l):
+                                        if val or isinstance(val, bool):
+                                            new_cur[j] = val
+                                    lines += [new_cur]
                         else:
                             current[i] = False
 
