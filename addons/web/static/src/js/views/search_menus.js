@@ -198,7 +198,7 @@ return Widget.extend({
         } else {
             this.filters[key] = filter;
             $filter = $('<li></li>')
-                .insertBefore(this.$divider)
+                .insertAfter(this.$divider)
                 .toggleClass('oe_searchview_custom_default', filter.is_default)
                 .append($('<a>').text(filter.name));
 
@@ -307,8 +307,8 @@ return Widget.extend({
         this.$add_filter_menu = this.$('.oe-add-filter-menu');
         _.each(this.filters, function (group) {
             if (group.is_visible()) {
-                group.insertBefore(self.$add_filter);
-                $('<li class="divider">').insertBefore(self.$add_filter);
+                group.insertAfter(self.$add_filter_menu);
+                $('<li class="divider">').insertAfter(self.$add_filter_menu);
             }
         });
         this.append_proposition().then(function (prop) {
@@ -351,8 +351,8 @@ return Widget.extend({
             facets = filters_widgets.map(function (filter) {
                 return filter_group.make_facet([filter_group.make_value(filter)]);
             });
-        filter_group.insertBefore(this.$add_filter);
-        $('<li class="divider">').insertBefore(this.$add_filter);
+        filter_group.insertAfter(this.$add_filter_menu);
+        $('<li class="divider">').insertAfter(this.$add_filter_menu);
         this.searchview.query.add(facets, {silent: true});
         this.searchview.query.trigger('reset');
 
@@ -398,13 +398,13 @@ return Widget.extend({
         var self = this;
         this.$menu = this.$('.group-by-menu');
         var divider = this.$menu.find('.divider');
-        _.invoke(this.groups, 'insertBefore', divider);
+        _.invoke(this.groups, 'insertAfter', divider);
         if (this.groups.length) {
             divider.show();
         }
         this.$add_group = this.$menu.find('.add-custom-group');
         this.fields_def.then(function () {
-            self.$menu.append(QWeb.render('GroupByMenuSelector', self));
+            $(QWeb.render('GroupByMenuSelector', self)).insertBefore(divider);
             self.$add_group_menu = self.$('.oe-add-group');
             self.$group_selector = self.$('.oe-group-selector');
             self.$('.oe-select-group').click(function () {

@@ -1222,8 +1222,8 @@
         <span class="fa fa-bars"/> Group By <span class="caret"/>
     </button>
     <ul class="dropdown-menu group-by-menu" role="menu">
-        <li class="divider"/>
         <li class="add-custom-group o_closed_menu"><a>Add custom group</a></li>
+        <li class="divider"/>
     </ul>
 </div>
 
@@ -1240,7 +1240,6 @@
         <span class="fa fa-star"/> Favorites <span class="caret"/>
     </button>
     <ul class="dropdown-menu o_favorites_menu" role="menu">
-        <li class="divider"/>
         <li class="oe-save-search o_closed_menu"><a>Save current search</a></li>
         <li class="oe-save-name"><input type="text" class="form-control"></input></li>
         <li class="oe-save-name">
@@ -1250,6 +1249,7 @@
             <span class="oe-share-filter"><input type="checkbox"/>Share with all users</span>
         </li>
         <li class="oe-save-name"><button type="button" class="btn btn-default">Save</button></li>
+        <li class="divider"/>
     </ul>
 </div>
 <t t-name="SearchView.extended_search.proposition">
