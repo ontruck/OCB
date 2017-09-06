@@ -112,7 +112,7 @@ class MailController(http.Controller):
     def read_followers(self, follower_ids):
         result = []
         is_editable = request.env.user.has_group('base.group_no_one')
-        for follower in request.env['mail.followers'].browse(follower_ids):
+        for follower in request.env['mail.followers'].sudo().browse(follower_ids):
             result.append({
                 'id': follower.id,
                 'name': follower.partner_id.name or follower.channel_id.name,
