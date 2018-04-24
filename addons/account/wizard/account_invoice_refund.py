@@ -82,7 +82,7 @@ class AccountInvoiceRefund(models.TransientModel):
                                     'partner_insite', 'partner_contact',
                                     'partner_ref', 'payment_term_id', 'account_id',
                                     'currency_id', 'invoice_line_ids', 'tax_line_ids',
-                                    'journal_id', 'date'])
+                                    'journal_id', 'date', 'company_id'])
                         invoice = invoice[0]
                         del invoice['id']
                         invoice_lines = inv_line_obj.browse(invoice['invoice_line_ids'])
@@ -102,7 +102,7 @@ class AccountInvoiceRefund(models.TransientModel):
                             'fiscal_position_id': inv.fiscal_position_id.id,
                         })
                         for field in ('partner_id', 'account_id', 'currency_id',
-                                         'payment_term_id', 'journal_id'):
+                                         'payment_term_id', 'journal_id', 'company_id'):
                                 invoice[field] = invoice[field] and invoice[field][0]
                         inv_refund = inv_obj.create(invoice)
                         if inv_refund.payment_term_id.id:
