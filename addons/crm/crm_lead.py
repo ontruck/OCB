@@ -1152,7 +1152,7 @@ Update your business card, phone book, social media,... Send an email right now 
 
             # Next activities
             if opp['next_activity_id'] and opp['date_action']:
-                date_action = datetime.strptime(opp['date_action'], tools.DEFAULT_SERVER_DATE_FORMAT).date()
+                date_action = datetime.strptime(opp['date_action'][:10], tools.DEFAULT_SERVER_DATE_FORMAT).date()
 
                 if date_action == date.today():
                     res['activity']['today'] += 1
