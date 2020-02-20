@@ -89,6 +89,7 @@ _map_iban_template = {
     'bg': 'BGkk BBBB SSSS DDCC CCCC CC',  # Bulgaria
     'bh': 'BHkk BBBB CCCC CCCC CCCC CC',  # Bahrain
     'br': 'BRkk BBBB BBBB SSSS SCCC CCCC CCCT N',  # Brazil
+    'by': 'BYkk BBBB AAAA CCCC CCCC CCCC CCCC',  # Belarus
     'ch': 'CHkk BBBB BCCC CCCC CCCC C',  # Switzerland
     'cr': 'CRkk BBBC CCCC CCCC CCCC C',  # Costa Rica
     'cy': 'CYkk BBBS SSSS CCCC CCCC CCCC CCCC',  # Cyprus
@@ -144,6 +145,7 @@ _map_iban_template = {
     'sm': 'SMkk KBBB BBSS SSSC CCCC CCCC CCC',  # San Marino
     'tn': 'TNkk BBSS SCCC CCCC CCCC CCCC',  # Tunisia
     'tr': 'TRkk BBBB BRCC CCCC CCCC CCCC CC',  # Turkey
+    'ua': 'UAkk BBBB BBCC CCCC CCCC CCCC CCCC C',  # Ukraine
     'vg': 'VGkk BBBB CCCC CCCC CCCC CCCC',  # Virgin Islands
     'xk': 'XKkk BBBB CCCC CCCC CCCC',  # Kosovo
 }
