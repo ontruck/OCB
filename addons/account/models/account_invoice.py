@@ -590,6 +590,9 @@ class AccountInvoice(models.Model):
                 else:
                     tax_grouped[key]['amount'] += val['amount']
                     tax_grouped[key]['base'] += val['base']
+        for key, tax in tax_grouped.iteritems():
+            tax['amount'] = self.currency_id.round(tax['amount'])
+            tax['base'] = self.currency_id.round(tax['base'])
         return tax_grouped
 
     @api.multi
